@@ -3,24 +3,118 @@ from Gym_setup import *
 
 import random
 
+def silver():
+    print(" ")
+    print("1. Silver")
+    print("Starting Fee: $15")
+    print("Payment Plan: $35/month")
+    print("Accessible Equipment: ")
+    print(" ")
+
+def gold():
+    print("2. Gold")
+    print("Starting Fee: $21")
+    print("Payment Plan: $50/month")
+    print("Accessible Equipment: ")
+    print(" ")
+ 
+def plat():
+    print("3. Platinum")
+    print("Starting Fee: $28")
+    print("Payment Plan: $65/month")
+    print("Accessible Equipment: ")
+    print(" ")
 
 def main_menu():
-    print("1. Add Member")
+    print("1. Become a Member")
+    print("2. Display Members")
+    print("3. Remove Member")
+
+def remove_menu():
+    print("Are You Sure?")
+
 
 memberList = []
 memberInfo = []
+memberBilling = []
 
-
-while 1:
+while 99:
     main_menu()
     choice = int(input(""))
     if choice == 1:
-        a = random.sample(range(10000, 99999), 1)
-        mm = GS.Member(input("Name: "), input("Phone Number: "), a)
-        memberList.append(mm)
+        while 1:
+            silver()
+            gold()
+            plat()
+            option1 = int(input("Enter the Desired Membership Level: "))
+            print(" ")
+
+            if option1 == 1:
+                gymId = random.sample(range(10000, 99999), 1)
+                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
+                memberList.append(mm)
+                info = Member.__sensitiveInfo__(input("Email: "), input("Phone Number: "))
+                memberInfo.append(info)
+                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                memberBilling.append(pay)
+                for x in range(0, len(memberList)):
+                    if x == memberList(Member.__init__(id)):
+                        new_value = random.sample(range(10000, 99999), 1)
+                        memberList[Member.__init__(id)] = new_value
+
+            if option1 == 2:
+                gymId = random.sample(range(10000, 99999), 1)
+                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
+                memberList.append(mm)
+                info = Member.__sensitiveInfo__(input("Email: "), input("Phone Number: "))
+                memberInfo.append(info)
+                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                memberBilling.append(pay)
+                for x in range(0, len(memberList)):
+                    if x == memberList(Member.__init__(id)):
+                        new_value = random.sample(range(10000, 99999), 1)
+                        memberList[Member.__init__(id)] = new_value
+
+            if option1 == 3:
+                gymId = random.sample(range(10000, 99999), 1)
+                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
+                memberList.append(mm)
+                info = Sensitive_Info(input("Email: "), input("Phone Number: "))
+                memberInfo.append(info)
+                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                memberBilling.append(pay)
+                for x in range(0, len(memberList)):
+                    if x == memberList(Member.__init__(id)):
+                        new_value = random.sample(range(10000, 99999), 1)
+                        memberList[Member.__init__(id)] = new_value
+
+            if option1 == "Main Menu" or "0":
+                print("Exiting to Main Menu")
+                break
+
+            else:
+                print("Please Enter A Valid Input")
+                print(" ")
+            
     if choice == 2:
         for x in memberList:
-            print(Person.display)
+            print(Member.display)
+    
+    if choice == 3:
+        while 2:
+            remove_menu()
+            option2 = input("")
+            print(" ")
+            if option2 == "Yes" or "yes":
+                user = input("Enter Gym Id: ")
+                for x in memberList:
+                    if x == memberList(Member.__init__(id)):
+                        memberList.remove(Member)
+                        break
+            
+            if option2 == "No" or "no":
+                print("Returning to Main Menu")
+                break
 
     if choice == 0:
         print("Program Terminated.")
