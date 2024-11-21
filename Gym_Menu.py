@@ -29,9 +29,12 @@ def main_menu():
     print("1. Become a Member")
     print("2. Display Members")
     print("3. Remove Member")
+    print("4. Exit Program")
 
 def remove_menu():
     print("Are You Sure?")
+    print("1. Yes")
+    print("2. No")
 
 
 memberList = []
@@ -51,11 +54,11 @@ while 99:
 
             if option1 == 1:
                 gymId = random.sample(range(10000, 99999), 1)
-                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
+                mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
                 memberList.append(mm)
-                info = Member.__sensitiveInfo__(input("Email: "), input("Phone Number: "))
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                pay = info.billing()
                 memberBilling.append(pay)
                 for x in range(0, len(memberList)):
                     if x == memberList(Member.__init__(id)):
@@ -64,11 +67,11 @@ while 99:
 
             if option1 == 2:
                 gymId = random.sample(range(10000, 99999), 1)
-                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
+                mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
                 memberList.append(mm)
-                info = Member.__sensitiveInfo__(input("Email: "), input("Phone Number: "))
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                pay = info.billing()
                 memberBilling.append(pay)
                 for x in range(0, len(memberList)):
                     if x == memberList(Member.__init__(id)):
@@ -77,11 +80,11 @@ while 99:
 
             if option1 == 3:
                 gymId = random.sample(range(10000, 99999), 1)
-                mm = Member.__init__(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
+                mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
                 memberList.append(mm)
-                info = Sensitive_Info(input("Email: "), input("Phone Number: "))
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = Member.__billing__(input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                pay = info.billing()
                 memberBilling.append(pay)
                 for x in range(0, len(memberList)):
                     if x == memberList(Member.__init__(id)):
@@ -103,19 +106,19 @@ while 99:
     if choice == 3:
         while 2:
             remove_menu()
-            option2 = input("")
+            option2 = int(input())
             print(" ")
-            if option2 == "Yes" or "yes":
-                user = input("Enter Gym Id: ")
+            if option2 == 1:
+                user = input("Enter Name: ")
                 for x in memberList:
                     if x == memberList(Member.__init__(id)):
                         memberList.remove(Member)
                         break
             
-            if option2 == "No" or "no":
+            if option2 == 2:
                 print("Returning to Main Menu")
                 break
 
-    if choice == 0:
+    if choice == 4:
         print("Program Terminated.")
         break

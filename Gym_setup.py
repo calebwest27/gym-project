@@ -24,19 +24,29 @@ class Member(Person):
         return ""
     
 class Sensitive_Info(Member):
-    def __sensitiveInfo__(self, nn, aa, gg, id, mem, ee, ph):
+    def __init__(self, nn, aa, gg, id, mem, ee, ph, noc, ba, cc, cv, ed):
         Member.__init__(self, nn, aa, gg, id, mem)
         self.email = ee
         self.phoneNumber = ph
-
-    def __billing__(self, noc, ba, cc, cv, ed):
         self.name_on_card = noc
         self.billing_address = ba
         self.credit_card = cc
         self.cvv = cv
         self.expire_date = ed
 
-    def __display_sensitive__(self):
+    def billing(self): # Different Ways of paying, so many months in advance
+        start_fee = int(input("Enter the Starting Fee: "))
+        monthly_amm = int(input("Enter the Monthly Ammount: "))
+        num_months = int(input("Enter the Number of Months Payment: "))
+        amount = monthly_amm * num_months
+        subtotal = amount + start_fee
+        # Tax = 10%
+        tax = (subtotal)* 0.1
+        print("Subtotal:", subtotal)
+        print("Tax:", tax)
+        print("Total:", )
+
+    def display_sensitive(self):
         print(Member.display_member(self))
         print("Email:", self.email)
         print("Billing Address:", self.billing_address)
