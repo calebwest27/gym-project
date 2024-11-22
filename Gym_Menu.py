@@ -56,40 +56,43 @@ while 99:
                 gymId = random.sample(range(10000, 99999), 1)
                 mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
                 memberList.append(mm)
-                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-                memberInfo.append(info)
-                pay = info.billing()
-                memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList(Member.__init__(id)):
-                        new_value = random.sample(range(10000, 99999), 1)
-                        memberList[Member.__init__(id)] = new_value
+                # info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), \
+                #     input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                # memberInfo.append(info)
+                # pay = info.billing()
+                # memberBilling.append(pay)
+                # for x in range(0, len(memberList)):
+                #     if x == memberList(Member.__init__(id)):
+                #         new_value = random.sample(range(10000, 99999), 1)
+                #         memberList[Member.__init__(id)] = new_value
 
             if option1 == 2:
                 gymId = random.sample(range(10000, 99999), 1)
                 mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
                 memberList.append(mm)
-                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-                memberInfo.append(info)
-                pay = info.billing()
-                memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList(Member.__init__(id)):
-                        new_value = random.sample(range(10000, 99999), 1)
-                        memberList[Member.__init__(id)] = new_value
+                # info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), \
+                #     input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                # memberInfo.append(info)
+                # pay = info.billing()
+                # memberBilling.append(pay)
+                # for x in range(0, len(memberList)):
+                #     if x == memberList(Member.__init__(id)):
+                #         new_value = random.sample(range(10000, 99999), 1)
+                #         memberList[Member.__init__(id)] = new_value
 
             if option1 == 3:
                 gymId = random.sample(range(10000, 99999), 1)
                 mm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
                 memberList.append(mm)
-                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-                memberInfo.append(info)
-                pay = info.billing()
-                memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList(Member.__init__(id)):
-                        new_value = random.sample(range(10000, 99999), 1)
-                        memberList[Member.__init__(id)] = new_value
+                # info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "), \
+                #     input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                # memberInfo.append(info)
+                # pay = info.billing()
+                # memberBilling.append(pay)
+                # for x in range(0, len(memberList)):
+                #     if x == memberList:
+                #         new_value = random.sample(range(10000, 99999), 1)
+                #         memberList[x] = new_value
 
             if option1 == "Main Menu" or "0":
                 print("Exiting to Main Menu")
@@ -100,8 +103,8 @@ while 99:
                 print(" ")
             
     if choice == 2:
-        for x in memberList:
-            print(Member.display)
+        for x in range(0, len(memberList)):
+            mm.display_member()
     
     if choice == 3:
         while 2:
@@ -111,8 +114,8 @@ while 99:
             if option2 == 1:
                 user = input("Enter Name: ")
                 for x in memberList:
-                    if x == memberList(Member.__init__(id)):
-                        memberList.remove(Member)
+                    if x == user:
+                        memberList.remove(x)
                         break
             
             if option2 == 2:

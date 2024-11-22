@@ -3,12 +3,14 @@ class Person:
         self.name = nn
         self.age = aa
         self.gender = gg
+        
 
     def display(self):
+        print(" ")
         print("Name:", self.name)
         print("Age:", self.age)
         print("Gender:", self.gender)
-        return ""
+        return " "
   
 
 class Member(Person):
@@ -16,12 +18,15 @@ class Member(Person):
         Person.__init__(self, nn, aa, gg)
         self.gymID = id
         self.memLevel = mem
+        
 
     def display_member(self):
         print(Person.display(self))
         print("Gym ID:", self.gymID)
         print("Membership Level:", self.memLevel)
-        return ""
+        print(" ")
+        return " "
+    
     
 class Sensitive_Info(Member):
     def __init__(self, nn, aa, gg, id, mem, ee, ph, noc, ba, cc, cv, ed):
@@ -33,6 +38,7 @@ class Sensitive_Info(Member):
         self.credit_card = cc
         self.cvv = cv
         self.expire_date = ed
+        
 
     def billing(self): # Different Ways of paying, so many months in advance
         start_fee = int(input("Enter the Starting Fee: "))
