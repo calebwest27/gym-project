@@ -49,6 +49,7 @@ while 99:
             silver()
             gold()
             plat()
+            print ("0. Exit to Main Menu")
             option1 = int(input("Enter the Desired Membership Level: "))
             print(" ")
 
@@ -94,7 +95,7 @@ while 99:
                 #         new_value = random.sample(range(10000, 99999), 1)
                 #         memberList[x] = new_value
 
-            if option1 == "Main Menu" or "0":
+            if option1 == 0:
                 print("Exiting to Main Menu")
                 break
 
