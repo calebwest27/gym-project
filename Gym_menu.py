@@ -61,33 +61,35 @@ while 99:
 
             if option1 == 1:
                 gymId = random.sample(range(10000, 99999), 1)
-                mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
-                memberList.append(mm)
-                # info = Gs.Info(input("Email: "), input("Phone Number: "), input("Name On Card: "),
-                #                input("Billing Address: "), input("Expiration Date: "),
-                #                input("Credit Card Number: "), input("CVV: "))
-                # memberInfo.append(info)
-                # pay = info.billing()
-                # memberBilling.append(pay)
-                # for x in range(0, len(memberList)):
-                #     if x == memberList:
-                #         new_value = random.sample(range(10000, 99999), 1)
-                #         memberList[x] = new_value
+                # mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
+                # memberList.append(mm)
+                info = Gs.Info(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver",
+                               input("Email: "), input("Phone Number: "), input("Name On Card: "),
+                               input("Billing Address: "), input("Expiration Date: "),
+                               input("Credit Card Number: "), input("CVV: "))
+                memberInfo.append(info)
+                pay = info.billing()
+                memberBilling.append(pay)
+                for x in range(0, len(memberList)):
+                    if x == memberList:
+                        new_value = random.sample(range(10000, 99999), 1)
+                        memberList[x] = new_value
 
             if option1 == 2:
                 gymId = random.sample(range(10000, 99999), 1)
-                mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
-                memberList.append(mm)
-                # info = Gs.Info(input("Email: "), input("Phone Number: "), input("Name On Card: "),
-                #                input("Billing Address: "), input("Expiration Date: "),
-                #                input("Credit Card Number: "), input("CVV: "))
-                # memberInfo.append(info)
-                # pay = info.billing()
-                # memberBilling.append(pay)
-                # for x in range(0, len(memberList)):
-                #     if x == memberList:
-                #         new_value = random.sample(range(10000, 99999), 1)
-                #         memberList[x] = new_value
+                # mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
+                # memberList.append(mm)
+                info = Gs.Info(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold",
+                               input("Email: "), input("Phone Number: "), input("Name On Card: "),
+                               input("Billing Address: "), input("Expiration Date: "),
+                               input("Credit Card Number: "), input("CVV: "))
+                memberInfo.append(info)
+                pay = info.billing()
+                memberBilling.append(pay)
+                for x in range(0, len(memberList)):
+                    if x == memberList:
+                        new_value = random.sample(range(10000, 99999), 1)
+                        memberList[x] = new_value
 
             if option1 == 3:
                 gymId = random.sample(range(10000, 99999), 1)
