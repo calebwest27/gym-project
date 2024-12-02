@@ -1,8 +1,7 @@
-import Gym_setup as Gs
-
+import Gym_setup as GS
+from Gym_setup import *
 
 import random
-
 
 def silver():
     print(" ")
@@ -12,15 +11,13 @@ def silver():
     print("Accessible Equipment: ")
     print(" ")
 
-
 def gold():
     print("2. Gold")
     print("Starting Fee: $21")
     print("Payment Plan: $50/month")
     print("Accessible Equipment: ")
     print(" ")
-
-
+ 
 def plat():
     print("3. Platinum")
     print("Starting Fee: $28")
@@ -28,13 +25,11 @@ def plat():
     print("Accessible Equipment: ")
     print(" ")
 
-
 def main_menu():
     print("1. Become a Member")
     print("2. Display Members")
     print("3. Remove Member")
     print("4. Exit Program")
-
 
 def remove_menu():
     print("Are You Sure?")
@@ -42,10 +37,11 @@ def remove_menu():
     print("2. No")
 
 
-memberList = []
+memberSilverList = []
+memberGoldList = []
+memberPlatList = []
 memberInfo = []
 memberBilling = []
-
 
 while 99:
     main_menu()
@@ -55,57 +51,51 @@ while 99:
             silver()
             gold()
             plat()
-            print("0. Exit to Main Menu")
+            print ("0. Exit to Main Menu")
             option1 = int(input("Enter the Desired Membership Level: "))
             print(" ")
 
             if option1 == 1:
                 gymId = random.sample(range(10000, 99999), 1)
-                # mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
-                # memberList.append(mm)
-                info = Gs.Info(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver",
-                               input("Email: "), input("Phone Number: "), input("Name On Card: "),
-                               input("Billing Address: "), input("Expiration Date: "),
-                               input("Credit Card Number: "), input("CVV: "))
+                sm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
+                memberSilverList.append(sm)
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "),
+                    input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
                 pay = info.billing()
                 memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList:
+                for x in range(0, len(memberSilverList)):
+                    if x == gymId:
                         new_value = random.sample(range(10000, 99999), 1)
-                        memberList[x] = new_value
+                        memberSilverList(x) == new_value
 
             if option1 == 2:
                 gymId = random.sample(range(10000, 99999), 1)
-                # mm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
-                # memberList.append(mm)
-                info = Gs.Info(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold",
-                               input("Email: "), input("Phone Number: "), input("Name On Card: "),
-                               input("Billing Address: "), input("Expiration Date: "),
-                               input("Credit Card Number: "), input("CVV: "))
+                gm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
+                memberGoldList.append(gm)
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "),
+                    input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
                 pay = info.billing()
                 memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList:
+                for x in range(0, len(memberGoldList)):
+                    if x == gymId:
                         new_value = random.sample(range(10000, 99999), 1)
-                        memberList[x] = new_value
+                        memberGoldList(x) == new_value
 
             if option1 == 3:
                 gymId = random.sample(range(10000, 99999), 1)
-                # mm = Gs.Member()
-                # memberList.append(mm)
-                info = Gs.Info(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum",
-                               input("Email: "), input("Phone Number: "), input("Name On Card: "),
-                               input("Billing Address: "), input("Expiration Date: "),
-                               input("Credit Card Number: "), input("CVV: "))
+                pm = GS.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
+                memberPlatList.append(pm)
+                info = GS.Sensitive_Info(input("Email: "), input("Phone Number: "),
+                    input("Name On Card: "), input("Billing Address: "), input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
                 pay = info.billing()
                 memberBilling.append(pay)
-                for x in range(0, len(memberList)):
-                    if x == memberList:
+                for x in range(0, len(memberPlatList)):
+                    if x == gymId:
                         new_value = random.sample(range(10000, 99999), 1)
-                        memberList[x] = new_value
+                        memberPlatList(x) == new_value
 
             if option1 == 0:
                 print("Exiting to Main Menu")
@@ -114,11 +104,27 @@ while 99:
             else:
                 print("Please Enter A Valid Input")
                 print(" ")
-
+            
     if choice == 2:
-        for x in range(0, len(memberList)):
-            mm.display_member()
-
+        while 2:
+            print("1. Display Silver Members")
+            print("2. Display Gold Members")
+            print("3. Display Platinum Members")
+            print("0. Exit to Main Menu")
+            option3 = int(input())
+            if option3 == 1:
+                for x in range(0, len(memberSilverList)):
+                    sm.display_member()
+            if option3 == 2:
+                for x in range(0, len(memberGoldList)):
+                    gm.display_member()
+            if option3 == 3:
+                for x in range(0, len(memberPlatList)):
+                    pm.display_member()
+            if option3 == 0:
+                print("Exiting to Main Menu")
+                break
+    
     if choice == 3:
         while 2:
             remove_menu()
@@ -126,11 +132,24 @@ while 99:
             print(" ")
             if option2 == 1:
                 user = input("Enter Name: ")
-                for x in memberList:
+                for x in memberSilverList:
                     if x == user:
-                        memberList.remove(x)
-                break
-
+                        memberSilverList.remove(x)
+                        break
+                    else:
+                        for x in memberGoldList:
+                            if x == user:
+                                memberGoldList.remove(x)
+                                break
+                            else:
+                                for x in memberPlatList:
+                                    if x == user:
+                                        memberPlatList.remove(x)
+                                        break
+                                    else:
+                                        print("Member not found")
+                                        break
+                
             if option2 == 2:
                 print("Returning to Main Menu")
                 break
