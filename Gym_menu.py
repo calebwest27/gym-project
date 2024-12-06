@@ -71,7 +71,7 @@ while 99:
                     input("Name On Card: "), input("Billing Address: "),
                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = info.billing()
+                pay = info.silver_billing()
                 print("Billing Recipt: ")
                 memberBilling.append(pay)
                 sd = open('Silver_Gym_Mem.dat', 'ab')
@@ -92,7 +92,7 @@ while 99:
                     input("Name On Card: "), input("Billing Address: "),
                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = info.billing()
+                pay = info.gold_billing()
                 memberBilling.append(pay)
                 gd = open('Gold_Gym_Mem.dat', 'ab')
                 pickle.dump(gm,gd)
@@ -112,7 +112,7 @@ while 99:
                     input("Name On Card: "), input("Billing Address: "),
                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
                 memberInfo.append(info)
-                pay = info.billing()
+                pay = info.plat_billing()
                 memberBilling.append(pay)
                 pd = open('Plat_Gym_Mem.dat', 'ab')
                 pickle.dump(pm,pd)
