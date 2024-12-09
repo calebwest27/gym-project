@@ -74,7 +74,7 @@ while 99:
                 pay = info.silver_billing()
                 print("Billing Recipt: ")
                 memberBilling.append(pay)
-                sd = open('Silver_Gym_Mem.dat', 'ab')
+                sd = open('Silver_Gym.dat', 'ab')
                 pickle.dump(sm,sd)
                 sd.close
 
@@ -94,7 +94,7 @@ while 99:
                 memberInfo.append(info)
                 pay = info.gold_billing()
                 memberBilling.append(pay)
-                gd = open('Gold_Gym_Mem.dat', 'ab')
+                gd = open('Gold_Gym.dat', 'ab')
                 pickle.dump(gm,gd)
                 gd.close
 
@@ -114,7 +114,7 @@ while 99:
                 memberInfo.append(info)
                 pay = info.plat_billing()
                 memberBilling.append(pay)
-                pd = open('Plat_Gym_Mem.dat', 'ab')
+                pd = open('Plat_Gym.dat', 'ab')
                 pickle.dump(pm,pd)
                 pd.close
 
@@ -137,7 +137,7 @@ while 99:
             print("0. Exit to Main Menu")
             option2 = int(input())
             if option2 == 1:
-                sd = open('Silver_Gym_Mem.dat', 'rb')
+                sd = open('Silver_Gym.dat', 'rb')
                 print("Silver Members: ")
                 while 10:
                     try:
@@ -151,7 +151,7 @@ while 99:
                         break
                 sd.close()
             if option2 == 2:
-                gd = open('Gold_Gym_Mem.dat', 'rb')
+                gd = open('Gold_Gym.dat', 'rb')
                 print("Gold Members: ")
                 while 11:
                     try:
@@ -165,7 +165,7 @@ while 99:
                         break
                 gd.close()
             if option2 == 3:
-                pd = open('Plat_Gym_Mem.dat', 'rb')
+                pd = open('Plat_Gym.dat', 'rb')
                 print("Platinum Members: ")
                 while 12:
                     try:
