@@ -25,9 +25,10 @@ class Member(Person):
         print(" ")
 
 
-class Sensitive_Info():
-    def __init__(self, ee, ph, noc, ba, cc, cv, ed):
+class Sensitive_Info:
+    def __init__(self, ee, pw, ph, noc, ba, cc, cv, ed):
         self.email = ee
+        self.password = pw
         self.phoneNumber = ph
         self.name_on_card = noc
         self.billing_address = ba
