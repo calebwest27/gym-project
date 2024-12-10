@@ -45,7 +45,9 @@ def remove_menu():
 memberSilverList = []
 memberGoldList = []
 memberPlatList = []
-memberInfo = []
+memberSilverInfo = []
+memberGoldInfo = []
+memberPlatInfo = []
 memberBilling = []
 
 print(" ")
@@ -76,16 +78,19 @@ while 99:
             memberSilverList.append(sm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
-            info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
+            silver_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                      input("Name On Card: "), input("Billing Address: "),
                                      input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-            memberInfo.append(info)
-            pay = info.silver_billing()
+            memberSilverInfo.append(silver_info)
+            pay = silver_info.silver_billing()
             print("Billing Receipt: ")
             memberBilling.append(pay)
             sd = open('Silver_Gym_mem.dat', 'ab')
             pickle.dump(sm, sd)
             sd.close()
+            # silver_memInfo = open('Silver_Member_info.dat', 'ab')
+            # pickle.dump(silver_info, silver_memInfo)
+            # silver_memInfo.close()
 
         if option1 == 2:
             gymId = random.sample(range(100000, 999999), 1)
@@ -98,15 +103,18 @@ while 99:
             memberGoldList.append(gm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
-            info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
+            gold_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                      input("Name On Card: "), input("Billing Address: "),
                                      input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-            memberInfo.append(info)
-            pay = info.gold_billing()
+            memberGoldInfo.append(gold_info)
+            pay = gold_info.gold_billing()
             memberBilling.append(pay)
             gd = open('Gold_Gym_mem.dat', 'ab')
             pickle.dump(gm, gd)
             gd.close()
+            # gold_memInfo = open('Gold_Member_info.dat', 'ab')
+            # pickle.dump(gold_info, gold_memInfo)
+            # gold_memInfo.close()
 
         if option1 == 3:
             gymId = random.sample(range(100000, 999999), 1)
@@ -119,15 +127,18 @@ while 99:
             memberPlatList.append(pm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
-            info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
+            plat_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                      input("Name On Card: "), input("Billing Address: "),
                                      input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
-            memberInfo.append(info)
-            pay = info.plat_billing()
+            memberPlatInfo.append(plat_info)
+            pay = plat_info.plat_billing()
             memberBilling.append(pay)
             pd = open('Plat_Gym_mem.dat', 'ab')
             pickle.dump(pm, pd)
             pd.close()
+            # plat_memInfo = open('Plat_Member_info.dat', 'ab')
+            # pickle.dump(plat_info, plat_memInfo)
+            # plat_memInfo.close()
 
         if option1 == 0:
             print("Exiting to Main Menu")
@@ -145,6 +156,7 @@ while 99:
             print("1. Display Silver Members")
             print("2. Display Gold Members")
             print("3. Display Platinum Members")
+            print("4. Search Personal Information")
             print("0. Exit to Main Menu")
             option2 = int(input())
             if option2 == 1:
@@ -189,6 +201,74 @@ while 99:
                     except EOFError:
                         break
                 pd.close()
+            if option2 == 4:
+                while 100:
+                    print(" ")
+                    print("1. Siver")
+                    print("2. Gold")
+                    print("3. Platinum")
+                    print("0. Back to Display Menu")
+                    option5 = int(input("Enter Your Membership Level: "))
+                    if option5 == 1:
+                        user_Email = str(input("Enter Your Email: "))
+                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        for z in memberSilverInfo:
+                            if z.email == user_Email:
+                                print("Email Found")
+                                for z in memberSilverInfo:
+                                    if z.password == user_keyphrase:
+                                        print("Passphrase Found")
+                                        print("Displaying Member Information Below.")
+                                        print(" ")
+                                        print(z.email)
+                                        print(z.password)
+                                        print(z.phoneNumber)
+                                        print(z.name_on_card)
+                                        print(z.billing_address)
+                                        break
+                    if option5 == 2:
+                        user_Email = str(input("Enter Your Email: "))
+                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        for z in memberGoldInfo:
+                            if z.email == user_Email:
+                                print("Email Found")
+                                for z in memberGoldInfo:
+                                    if z.password == user_keyphrase:
+                                        print("Passphrase Found")
+                                        print("Displaying Member Information Below.")
+                                        print(" ")
+                                        print(z.email)
+                                        print(z.password)
+                                        print(z.phoneNumber)
+                                        print(z.name_on_card)
+                                        print(z.billing_address)
+                                        break
+                    if option5 == 3:
+                        user_Email = str(input("Enter Your Email: "))
+                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        for z in memberPlatInfo:
+                            if z.email == user_Email:
+                                print("Email Found")
+                                for z in memberPlatInfo:
+                                    if z.password == user_keyphrase:
+                                        print("Passphrase Found")
+                                        print("Displaying Member Information Below.")
+                                        print(" ")
+                                        print("Email:", z.email)
+                                        print("Phone Number:", z.phoneNumber)
+                                        print("Name:", z.name_on_card)
+                                        print("Billing Address", z.billing_address)
+                                        break
+                    if option5 == 0:
+                        print("Exiting to Display Menu")
+                        break
+
+                    # while 100:
+                    #     z = pickle.load(silver_memInfo)
+                    #     try:
+                    #         if z[0]
+                            
+
             if option2 == 0:
                 print("Exiting to Main Menu")
                 break
@@ -255,5 +335,4 @@ while 99:
     else:
         print("Please Enter A Valid Input")
         print(" ")
-
-    # if choice == 4:
+        
