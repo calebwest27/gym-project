@@ -88,9 +88,6 @@ while 99:
             sd = open('Silver_Gym_mem.dat', 'ab')
             pickle.dump(sm, sd)
             sd.close()
-            # silver_memInfo = open('Silver_Member_info.dat', 'ab')
-            # pickle.dump(silver_info, silver_memInfo)
-            # silver_memInfo.close()
 
         if option1 == 2:
             gymId = random.sample(range(100000, 999999), 1)
@@ -112,9 +109,6 @@ while 99:
             gd = open('Gold_Gym_mem.dat', 'ab')
             pickle.dump(gm, gd)
             gd.close()
-            # gold_memInfo = open('Gold_Member_info.dat', 'ab')
-            # pickle.dump(gold_info, gold_memInfo)
-            # gold_memInfo.close()
 
         if option1 == 3:
             gymId = random.sample(range(100000, 999999), 1)
@@ -136,9 +130,6 @@ while 99:
             pd = open('Plat_Gym_mem.dat', 'ab')
             pickle.dump(pm, pd)
             pd.close()
-            # plat_memInfo = open('Plat_Member_info.dat', 'ab')
-            # pickle.dump(plat_info, plat_memInfo)
-            # plat_memInfo.close()
 
         if option1 == 0:
             print("Exiting to Main Menu")
@@ -159,6 +150,7 @@ while 99:
             print("4. Search Personal Information")
             print("0. Exit to Main Menu")
             option2 = int(input())
+            print(" ")
             if option2 == 1:
                 sd = open('Silver_Gym_mem.dat', 'rb')
                 print("Silver Members: ")
@@ -170,6 +162,7 @@ while 99:
                         print(silver_data.gender)
                         print(silver_data.gymID)
                         print(silver_data.memLevel)
+                        print(" ")
                     except EOFError:
                         break
                 sd.close()
@@ -184,6 +177,7 @@ while 99:
                         print(gold_data.gender)
                         print(gold_data.gymID)
                         print(gold_data.memLevel)
+                        print(" ")
                     except EOFError:
                         break
                 gd.close()
@@ -198,6 +192,7 @@ while 99:
                         print(plat_data.gender)
                         print(plat_data.gymID)
                         print(plat_data.memLevel)
+                        print(" ")
                     except EOFError:
                         break
                 pd.close()
@@ -220,11 +215,10 @@ while 99:
                                         print("Passphrase Found")
                                         print("Displaying Member Information Below.")
                                         print(" ")
-                                        print(z.email)
-                                        print(z.password)
-                                        print(z.phoneNumber)
-                                        print(z.name_on_card)
-                                        print(z.billing_address)
+                                        print("Email:", z.email)
+                                        print("Phone Number:", z.phoneNumber)
+                                        print("Name:", z.name_on_card)
+                                        print("Billing Address:", z.billing_address)
                                         break
                     if option5 == 2:
                         user_Email = str(input("Enter Your Email: "))
@@ -237,11 +231,10 @@ while 99:
                                         print("Passphrase Found")
                                         print("Displaying Member Information Below.")
                                         print(" ")
-                                        print(z.email)
-                                        print(z.password)
-                                        print(z.phoneNumber)
-                                        print(z.name_on_card)
-                                        print(z.billing_address)
+                                        print("Email:", z.email)
+                                        print("Phone Number:", z.phoneNumber)
+                                        print("Name:", z.name_on_card)
+                                        print("Billing Address:", z.billing_address)
                                         break
                     if option5 == 3:
                         user_Email = str(input("Enter Your Email: "))
@@ -257,17 +250,11 @@ while 99:
                                         print("Email:", z.email)
                                         print("Phone Number:", z.phoneNumber)
                                         print("Name:", z.name_on_card)
-                                        print("Billing Address", z.billing_address)
+                                        print("Billing Address:", z.billing_address)
                                         break
                     if option5 == 0:
                         print("Exiting to Display Menu")
-                        break
-
-                    # while 100:
-                    #     z = pickle.load(silver_memInfo)
-                    #     try:
-                    #         if z[0]
-                            
+                        break                            
 
             if option2 == 0:
                 print("Exiting to Main Menu")
@@ -332,7 +319,6 @@ while 99:
         print("Program Terminated. We thank you for your time with Lit Fitness.")
         break
 
-    else:
+    if choice != 1 or 2 or 3 or 0:
         print("Please Enter A Valid Input")
         print(" ")
-        
