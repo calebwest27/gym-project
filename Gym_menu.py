@@ -53,9 +53,9 @@ memberBilling = []
 print(" ")
 print("Project Created by Joel Leone and Caleb West")
 print(" ")
-print("Welcome to Lit Fitness! Below is a Menu with options to select.")
+print("Welcome to Lit Fitness! Below is a Menu with options to create a membership.")
 print("Thank You For Choosing Lit Fitness.")
-print(" ")
+
 while 99:
     main_menu()
     choice = int(input(""))
@@ -79,8 +79,8 @@ while 99:
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
             silver_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
-                                     input("Name On Card: "), input("Billing Address: "),
-                                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                                            input("Name On Card: "), input("Billing Address: "),
+                                            input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
             memberSilverInfo.append(silver_info)
             pay = silver_info.silver_billing()
             print("Billing Receipt: ")
@@ -101,8 +101,8 @@ while 99:
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
             gold_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
-                                     input("Name On Card: "), input("Billing Address: "),
-                                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                                          input("Name On Card: "), input("Billing Address: "),
+                                          input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
             memberGoldInfo.append(gold_info)
             pay = gold_info.gold_billing()
             memberBilling.append(pay)
@@ -122,8 +122,8 @@ while 99:
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
             plat_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
-                                     input("Name On Card: "), input("Billing Address: "),
-                                     input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
+                                          input("Name On Card: "), input("Billing Address: "),
+                                          input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
             memberPlatInfo.append(plat_info)
             pay = plat_info.plat_billing()
             memberBilling.append(pay)
@@ -133,13 +133,6 @@ while 99:
 
         if option1 == 0:
             print("Exiting to Main Menu")
-
-        if option1 > 3:
-            print("Please Enter A Valid Input")
-            print(" ")
-        if option1 < 0:
-            print("Please Enter A Valid Input")
-            print(" ")
 
     if choice == 2:
         while 2:
@@ -199,7 +192,7 @@ while 99:
             if option2 == 4:
                 while 100:
                     print(" ")
-                    print("1. Siver")
+                    print("1. Silver")
                     print("2. Gold")
                     print("3. Platinum")
                     print("0. Back to Display Menu")
@@ -254,7 +247,7 @@ while 99:
                                         break
                     if option5 == 0:
                         print("Exiting to Display Menu")
-                        break                            
+                        break
 
             if option2 == 0:
                 print("Exiting to Main Menu")
@@ -319,6 +312,5 @@ while 99:
         print("Program Terminated. We thank you for your time with Lit Fitness.")
         break
 
-    if choice != 1 or 2 or 3 or 0:
-        print("Please Enter A Valid Input")
-        print(" ")
+    else:
+        print("Input unknown. Please try again.")
