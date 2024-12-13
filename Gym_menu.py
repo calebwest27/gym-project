@@ -56,9 +56,9 @@ print(" ")
 print("Welcome to Lit Fitness! Below is a Menu with options to create a membership.")
 print("Thank You For Choosing Lit Fitness.")
 
-while 99:
+while True:
     main_menu()
-    choice = int(input(""))
+    choice = int(input())
     if choice == 1:
         silver()
         gold()
@@ -68,10 +68,10 @@ while 99:
         print(" ")
 
         if option1 == 1:
-            gymId = random.sample(range(100000, 999999), 1)
-            sm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
+            gymID = random.sample(range(100000, 999999), 1)
+            sm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymID, "Silver")
             memberSilverList.append(sm)
-            print("New member information added. Your gym ID is: ", gymId)
+            print("New member information added. Your gym ID is: ", gymID), ". Do not forget this ID."
             print("The following info will be kept private, and only accessible by you.")
             silver_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                             input("Name On Card: "), input("Billing Address: "),
@@ -85,10 +85,10 @@ while 99:
             sd.close()
 
         if option1 == 2:
-            gymId = random.sample(range(100000, 999999), 1)
-            gm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
+            gymID = random.sample(range(100000, 999999), 1)
+            gm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymID, "Gold")
             memberGoldList.append(gm)
-            print("New member information added. Your gym ID is: ", gymId)
+            print("New member information added. Your gym ID is: ", gymID), ". Do not forget this ID."
             print("The following info will be kept private, and only accessible by you.")
             gold_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                           input("Name On Card: "), input("Billing Address: "),
@@ -101,10 +101,10 @@ while 99:
             gd.close()
 
         if option1 == 3:
-            gymId = random.sample(range(100000, 999999), 1)
-            pm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
+            gymID = random.sample(range(100000, 999999), 1)
+            pm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymID, "Platinum")
             memberPlatList.append(pm)
-            print("New member information added. Your gym ID is: ", gymId)
+            print("New member information added. Your gym ID is: ", gymID), ". Do not forget this ID."
             print("The following info will be kept private, and only accessible by you.")
             plat_info = Gs.Sensitive_Info(input("Email: "), input("Password: "), input("Phone Number: "),
                                           input("Name On Card: "), input("Billing Address: "),
@@ -119,8 +119,11 @@ while 99:
         if option1 == 0:
             print("Exiting to Main Menu")
 
+        if option1 not in [0, 1, 2, 3]:
+            print("Invalid input. Returning to Main Menu")
+
     if choice == 2:
-        while 2:
+        while True:
             print(" ")
             print("1. Display Silver Members")
             print("2. Display Gold Members")
@@ -132,7 +135,7 @@ while 99:
             if option2 == 1:
                 sd = open('Silver_Gym_mem.dat', 'rb')
                 print("Silver Members: ")
-                while 10:
+                while True:
                     try:
                         silver_data = pickle.load(sd)
                         print(silver_data.name)
@@ -147,7 +150,7 @@ while 99:
             if option2 == 2:
                 gd = open('Gold_Gym_mem.dat', 'rb')
                 print("Gold Members: ")
-                while 11:
+                while True:
                     try:
                         gold_data = pickle.load(gd)
                         print(gold_data.name)
@@ -162,7 +165,7 @@ while 99:
             if option2 == 3:
                 pd = open('Plat_Gym_mem.dat', 'rb')
                 print("Platinum Members: ")
-                while 12:
+                while True:
                     try:
                         plat_data = pickle.load(pd)
                         print(plat_data.name)
@@ -175,7 +178,7 @@ while 99:
                         break
                 pd.close()
             if option2 == 4:
-                while 100:
+                while True:
                     print(" ")
                     print("1. Silver")
                     print("2. Gold")
@@ -184,12 +187,12 @@ while 99:
                     option5 = int(input("Enter Your Membership Level: "))
                     if option5 == 1:
                         user_Email = str(input("Enter Your Email: "))
-                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        user_password = str(input("Enter Your Passphrase: "))
                         for z in memberSilverInfo:
                             if z.email == user_Email:
                                 print("Email Found")
                                 for z in memberSilverInfo:
-                                    if z.password == user_keyphrase:
+                                    if z.password == user_password:
                                         print("Passphrase Found")
                                         print("Displaying Member Information Below.")
                                         print(" ")
@@ -200,12 +203,12 @@ while 99:
                                         break
                     if option5 == 2:
                         user_Email = str(input("Enter Your Email: "))
-                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        user_password = str(input("Enter Your Passphrase: "))
                         for z in memberGoldInfo:
                             if z.email == user_Email:
                                 print("Email Found")
                                 for z in memberGoldInfo:
-                                    if z.password == user_keyphrase:
+                                    if z.password == user_password:
                                         print("Passphrase Found")
                                         print("Displaying Member Information Below.")
                                         print(" ")
@@ -216,12 +219,12 @@ while 99:
                                         break
                     if option5 == 3:
                         user_Email = str(input("Enter Your Email: "))
-                        user_keyphrase = str(input("Enter Your Passphrase: "))
+                        user_password = str(input("Enter Your Passphrase: "))
                         for z in memberPlatInfo:
                             if z.email == user_Email:
                                 print("Email Found")
                                 for z in memberPlatInfo:
-                                    if z.password == user_keyphrase:
+                                    if z.password == user_password:
                                         print("Passphrase Found")
                                         print("Displaying Member Information Below.")
                                         print(" ")
@@ -234,12 +237,19 @@ while 99:
                         print("Exiting to Display Menu")
                         break
 
+                    if option5 not in [0, 1, 2, 3]:
+                        print("Invalid input.")
+
             if option2 == 0:
                 print("Exiting to Main Menu")
                 break
 
+            if option2 not in [0, 1, 2, 3, 4]:
+                print("Invalid input. Returning to Main Menu")
+
     if choice == 3:
-        while 2:
+
+        while True:
             print("Which membership Level are you? (Silver / Gold / Platinum)")
             print("1. Silver")
             print("2. Gold")
@@ -247,55 +257,100 @@ while 99:
             print("0. Return to Menu")
             option3 = int(input())
             if option3 == 1:  # silver
-                user = input("Enter gym ID: ")
-                for x in memberSilverList:
-                    if x == user:
+                with open('Silver_Gym_mem.dat', 'rb') as sd:
+                    memberSilverList = []
+                    try:
+                        while True:
+                            member = pickle.load(sd)
+                            memberSilverList.append(member)
+                    except EOFError:
+                        pass
+                userID = int(input("Enter gym ID: "))
+                id_found = False
+                for Member in memberSilverList:
+                    if Member.gymID[0] == userID:
+                        id_found = True
                         remove_menu()  # are you sure?
                         option4 = int(input())
                         print(" ")
                         if option4 == 1:  # if yes
-                            memberSilverList.remove(x)
+                            memberSilverList.remove(Member)
+                            print("Your ID was found and has successfully been removed.")
+                            with open('Silver_Gym_mem.dat', 'wb') as sd:
+                                for sm in memberSilverList:
+                                    pickle.dump(sm, sd)
                             break
                         else:  # if not
                             print("Returning to 'remove' menu")
-                    else:
-                        print("ID not found in database.")
+                if not id_found:
+                    print("ID not found. Returning to 'remove' menu")
             if option3 == 2:
-                user = input("Enter gym ID: ")
-                for x in memberGoldList:
-                    if x == user:
+                with open('Gold_Gym_mem.dat', 'rb') as gd:
+                    memberGoldList = []
+                    try:
+                        while True:
+                            member = pickle.load(gd)
+                            memberGoldList.append(member)
+                    except EOFError:
+                        pass
+                userID = int(input("Enter gym ID: "))
+                id_found = False
+                for Member in memberGoldList:
+                    if Member.gymID[0] == userID:
+                        id_found = True
                         remove_menu()  # are you sure?
                         option4 = int(input())
                         print(" ")
                         if option4 == 1:  # if yes
-                            memberGoldList.remove(x)
+                            memberGoldList.remove(Member)
+                            print("Your ID was found and has successfully been removed.")
+                            with open('Gold_Gym_mem.dat', 'wb') as gd:
+                                for sm in memberGoldList:
+                                    pickle.dump(gm, gd)
+                                    pickle.load
                             break
                         else:
                             print("Returning to 'remove' menu")
-                    else:
-                        print("ID not found in database.")
+                if not id_found:
+                        print("ID not found. Returning to 'remove' menu")
             if option3 == 3:
-                user = input("Enter gym ID: ")
-                for x in memberPlatList:
-                    if x == user:
+                with open('Plat_Gym_mem.dat', 'rb') as pd:
+                    memberPlatList = []
+                    try:
+                        while True:
+                            member = pickle.load(pd)
+                            memberPlatList.append(member)
+                    except EOFError:
+                        pass
+                userID = int(input("Enter gym ID: "))
+                id_found = False
+                for Member in memberPlatList:
+                    if Member.gymID[0] == userID:
+                        id_found = True
                         remove_menu()  # are you sure?
                         option4 = int(input())
                         print(" ")
                         if option4 == 1:  # if yes
-                            memberPlatList.remove(x)
+                            memberPlatList.remove(Member)
+                            print("Your ID was found and has successfully been removed.")
+                            with open('Plat_Gym_mem.dat', 'wb') as pd:
+                                for sm in memberPlatList:
+                                    pickle.dump(pm, pd)
                             break
                         else:
                             print("Returning to 'remove' menu.")
-                    else:
-                        print("ID not found in database.")
+                if not id_found:
+                    print("ID not found. Returning to 'remove' menu")
             if option3 == 0:
                 print("Returning to Main Menu")
                 print(" ")
                 break
+            if option3 not in [0, 1, 2, 3]:
+                print("Error. Returning to Main Menu")
 
     if choice == 0:
         print("Program Terminated. We thank you for your time with Lit Fitness.")
         break
 
-    else:
+    if choice not in [0, 1, 2, 3,]:
         print("Input unknown. Please try again.")
