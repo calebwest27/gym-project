@@ -70,11 +70,6 @@ while 99:
         if option1 == 1:
             gymId = random.sample(range(100000, 999999), 1)
             sm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Silver")
-            # for x in range(0, len(memberSilverList)):  # This Makes sure there are no matching id numbers=========
-            #     if x == gymId:
-            #         new_value = random.sample(range(100000, 999999), 1)
-            #         memberSilverList(x) == new_value
-            #         print("Your new gym ID is: ", new_value)
             memberSilverList.append(sm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
@@ -92,11 +87,6 @@ while 99:
         if option1 == 2:
             gymId = random.sample(range(100000, 999999), 1)
             gm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Gold")
-            # for x in range(0, len(memberGoldList)):  # This Makes sure there are no matching id numbers=========
-            #     if x == gymId:
-            #         new_value = random.sample(range(100000, 999999), 1)
-            #         memberGoldList(x) == new_value
-            #         print("Your new gym ID is: ", new_value)
             memberGoldList.append(gm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
@@ -113,11 +103,6 @@ while 99:
         if option1 == 3:
             gymId = random.sample(range(100000, 999999), 1)
             pm = Gs.Member(input("Name: "), input("Age: "), input("Gender: "), gymId, "Platinum")
-            # for x in range(0, len(memberPlatList)):  # This Makes sure there are no matching id numbers=========
-            #     if x == gymId:
-            #         new_value = random.sample(range(100000, 999999), 1)
-            #         memberPlatList(x) == new_value
-            #         print("Your new gym ID is: ", new_value)
             memberPlatList.append(pm)
             print("New member information added. Your gym ID is: ", gymId)
             print("The following info will be kept private, and only accessible by you.")
