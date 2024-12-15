@@ -38,10 +38,10 @@ class Sensitive_Info:
 
     def display_sensitive(self):
         print(Sensitive_Info.display_sensitive(self))
+        print(" ")
         print("Email:", self.email)
         print("Billing Address:", self.billing_address)
         print("Phone Number:", self.phoneNumber)
-        print(" ")
 
     def silver_billing(self):
         start_fee = 15
@@ -51,6 +51,7 @@ class Sensitive_Info:
         subtotal = amount + start_fee
         # Tax = 10%
         tax = subtotal * 0.1
+        print(" ")
         print("Subtotal:", subtotal)
         print("Tax:", tax)
         print("Total:", subtotal + tax)
@@ -63,6 +64,7 @@ class Sensitive_Info:
         subtotal = amount + start_fee
         # Tax = 10%
         tax = subtotal * 0.1
+        print(" ")
         print("Subtotal:", subtotal)
         print("Tax:", tax)
         print("Total:", subtotal + tax)
@@ -75,6 +77,7 @@ class Sensitive_Info:
         subtotal = amount + start_fee
         # Tax = 10%
         tax = subtotal * 0.1
+        print(" ")
         print("Subtotal:", subtotal)
         print("Tax:", tax)
         print("Total:", subtotal + tax)

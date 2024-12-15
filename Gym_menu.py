@@ -37,6 +37,7 @@ def main_menu():
 
 
 def remove_menu():
+    print(" ")
     print("Are You Sure?")
     print("1. Yes")
     print("2. No")
@@ -78,7 +79,6 @@ while True:
                                             input("Expiration Date: "), input("Credit Card Number: "), input("CVV: "))
             memberSilverInfo.append(silver_info)
             pay = silver_info.silver_billing()
-            print("Billing Receipt: ")
             memberBilling.append(pay)
             sd = open('Silver_Gym_mem.dat', 'ab')
             pickle.dump(sm, sd)
@@ -184,6 +184,7 @@ while True:
                     print("2. Gold")
                     print("3. Platinum")
                     print("0. Back to Display Menu")
+                    print(" ")
                     option5 = int(input("Enter Your Membership Level: "))
                     if option5 == 1:
                         user_Email = str(input("Enter Your Email: "))
@@ -304,6 +305,7 @@ while True:
                         if option4 == 1:  # if yes
                             memberGoldList.remove(Member)
                             print("Your ID was found and has successfully been removed.")
+                            print(" ")
                             with open('Gold_Gym_mem.dat', 'wb') as gd:
                                 for sm in memberGoldList:
                                     pickle.dump(gm, gd)
@@ -311,6 +313,7 @@ while True:
                             break
                         else:
                             print("Returning to 'remove' menu")
+                            print(" ")
                 if not id_found:
                         print("ID not found. Returning to 'remove' menu")
             if option3 == 3:
@@ -343,7 +346,6 @@ while True:
                     print("ID not found. Returning to 'remove' menu")
             if option3 == 0:
                 print("Returning to Main Menu")
-                print(" ")
                 break
             if option3 not in [0, 1, 2, 3]:
                 print("Error. Returning to Main Menu")
